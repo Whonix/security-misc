@@ -1,0 +1,14 @@
+## Copyright (C) 2020 - 2020 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
+## See the file COPYING for copying conditions.
+
+[Unit]
+Description=Stricter mount options for /bin
+DefaultDependencies=no
+ConditionPathExists=/bin
+ConditionPathExists=/etc/remount-secure
+Before=sysinit.target
+
+[Mount]
+What=/bin
+Where=/bin
+Options=bind,nodev
